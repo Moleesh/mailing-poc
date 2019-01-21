@@ -1,12 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class BrokenButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.description= false;  // I declare the variable here
+    }
+  render() {
+    return (
+      <button onClick={() => this.handleClick()} disabled={this.description}>
+        Set background to red
+      </button>
+    )
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  handleClick() {
+      console.log(this.description);
+    this.description= true ;
+    ReactDOM.render(
+        <BrokenButton />,
+        document.getElementById('root')
+      )
+  }
+}
+
+ReactDOM.render(
+  <BrokenButton />,
+  document.getElementById('root')
+)
