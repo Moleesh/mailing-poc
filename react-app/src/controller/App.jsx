@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Home from "./Home";
-
+// Parent
 class App extends Component {
+  // statefull
   state = {};
   render() {
     return (
