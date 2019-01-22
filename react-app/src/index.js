@@ -8,19 +8,15 @@ class BrokenButton extends React.Component {
     }
   render() {
     return (
-      <button onClick={() => this.handleClick()} disabled={this.description}>
+      <input type="text">
         Set background to red
-      </button>
+      </input>
     )
   }
 
   handleClick() {
       console.log(this.description);
     this.description= true ;
-    ReactDOM.render(
-        <BrokenButton />,
-        document.getElementById('root')
-      )
   }
 }
 
