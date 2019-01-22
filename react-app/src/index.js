@@ -1,26 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./controller/App";
 
 class BrokenButton extends React.Component {
-    constructor(props) {
-        super(props);
-        this.description= false;  // I declare the variable here
-    }
   render() {
-    return (
-      <input type="text">
-        Set background to red
-      </input>
-    )
-  }
-
-  handleClick() {
-      console.log(this.description);
-    this.description= true ;
+    return <App />;
   }
 }
 
-ReactDOM.render(
-  <BrokenButton />,
-  document.getElementById('root')
-)
+ReactDOM.render(<BrokenButton />, document.getElementById("root"));
