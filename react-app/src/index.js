@@ -1,17 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./controller/App";
-import Router from "./router/BasicExample";
+import { BrowserRouter } from "react-router-dom";
 
-class BrokenButton extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Router />
-        <App />
-      </React.Fragment>
-    );
-  }
-}
+// import App from "./components/App";
+import Nav from "./router/Nav";
+import "bootstrap/dist/css/bootstrap.min.css";
+import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<BrokenButton />, document.getElementById("root"));
+ReactDOM.render(
+  <div className="container">
+    <BrowserRouter>
+      <Nav />
+    </BrowserRouter>
+    {/* <App /> */}
+  </div>,
+  document.getElementById("root")
+);
+
+serviceWorker.unregister();
