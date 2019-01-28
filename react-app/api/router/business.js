@@ -2,7 +2,7 @@ const express = require("express");
 const businessRoutes = express.Router();
 
 // Require Business model in our routes module
-let Business = require("./business.model");
+let Business = require("../model/business");
 
 // Defined store route
 businessRoutes.route("/add").post(function(req, res) {
@@ -59,7 +59,7 @@ businessRoutes.route("/update/:id").post(function(req, res) {
 
 // Defined delete | remove | destroy route
 businessRoutes.route("/delete/:id").get(function(req, res) {
-  Business.findByIdAndRemove({ _id: req.params.id }, function(err, business) {
+  Business.findOneAndDelete({ _id: req.params.id }, function(err, business) {
     if (err) res.json(err);
     else res.json("Successfully removed");
   });
