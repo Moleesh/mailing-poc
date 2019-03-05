@@ -1,0 +1,17 @@
+{
+  "name": "mail",
+  "version": "1.0.0",
+  "description": "mail service",
+  "main": "mail.js",
+  "dependencies": {
+    "nodemailer": "^5.1.1",
+    "nodemailer-smtp-transport": "^2.7.4"
+  },
+  "repository": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
