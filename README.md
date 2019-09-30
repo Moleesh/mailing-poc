@@ -7,5 +7,6 @@ Mail client used is gmail.
 
 ```
   frontend  - react-app (npm start)
+  
   backend   - mail (node mail.js)
 ```
